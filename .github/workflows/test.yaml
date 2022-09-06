@@ -2,6 +2,7 @@ name: test
 on:
   pull_request:
   workflow_dispatch:
+  push:
 
 jobs:
   lint:
@@ -10,7 +11,8 @@ jobs:
     steps:
       - name: create_file
         run: |
-          echo "\{ \"ConnectionStrings\":" > appsettings.json
-          echo "\{ \"AtlasDatabase\": >> appsettings.json
-          echo "\"Server=(localdb)\\\\mssqllocaldb;Database=atlas_test;Trusted_Connection=True\" \}\}" > appsettings.json
+          echo "{\"ConnectionStrings\":" > appsettings.json
+          echo "{ \"AtlasDatabase\": >> appsettings.json
+          echo "\"Server=(localdb)\\\\mssqllocaldb;Database=atlas_test;Trusted_Connection=True\" >> appsettings.json
+          echo "}}" >> appsettings.json 
           cat appsettings.json
