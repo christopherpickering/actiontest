@@ -1,0 +1,11 @@
+name: test
+on:
+  pull_request:
+
+jobs:
+  lint:
+    name: lint
+    runs-on: windows-latest
+    steps:
+      - name: create_file
+        run: echo { \"ConnectionStrings\": { \"AtlasDatabase\": \"Server=(localdb)\\\\mssqllocaldb;Database=atlas_test;Trusted_Connection=True\" }} > appsettings.json
