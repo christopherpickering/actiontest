@@ -7,7 +7,7 @@ on:
 jobs:
   django:
     name: django_source
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: install deps
         run: |
