@@ -16,7 +16,7 @@ jobs:
           git clone --depth 1 https://github.com/django/django .
           cd ..
           mkdir django_source
-          mv django_raw/**/*.html django_source
+          find django_raw -iname '*.html*' -exec mv '{}' django_source/ \;
           cd django_source; ls
           
           
