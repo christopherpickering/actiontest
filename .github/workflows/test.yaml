@@ -5,14 +5,16 @@ on:
   push:
 
 jobs:
-  lint:
-    name: lint
+  django:
+    name: django_source
     runs-on: windows-latest
     steps:
-      - name: create_file
+      - name: install deps
         run: |
-          echo '{"ConnectionStrings":' > appsettings.json
-          echo '{"AtlasDatabase":' >> appsettings.json
-          echo '"Server=(localdb)\\mssqllocaldb;Database=atlas_test;Trusted_Connection=True"' >> appsettings.json
-          echo "}}" >> appsettings.json 
-          cat appsettings.json
+          mkdir django_raw; cd django_raw
+          git clone --depth 1 https://github.com/django/django .
+          cd ..; mdkir django_source
+          mv django_raw/**/*.html django_source
+          cd django_source; ls
+          
+          
