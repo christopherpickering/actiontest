@@ -15,7 +15,7 @@ jobs:
           cd django_raw
           git clone --depth 1 https://github.com/django/django .
           cd ..
-          mdkir django_source
+          mkdir django_source
           mv django_raw/**/*.html django_source
           cd django_source; ls
           
