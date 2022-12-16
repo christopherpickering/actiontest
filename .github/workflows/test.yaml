@@ -11,9 +11,11 @@ jobs:
     steps:
       - name: install deps
         run: |
-          mkdir django_raw; cd django_raw
+          mkdir django_raw
+          cd django_raw
           git clone --depth 1 https://github.com/django/django .
-          cd ..; mdkir django_source
+          cd ..
+          mdkir django_source
           mv django_raw/**/*.html django_source
           cd django_source; ls
           
